@@ -12,8 +12,9 @@
     <script src="./index.js" defer></script>
 </head>
 <body>
-<section>
-<nav>
+<section id="nav">
+<div class="nav__container">
+
 <div class="nav__wrapper">
     
     <div class="logo">
@@ -28,7 +29,8 @@
     </div>
 </div>
 </div>
-</nav>
+</div>
+</section>
 <header>
     <div class="content__wrapper">
         <div class="flex-col">
@@ -44,22 +46,57 @@
                 </h2>
             </div>
         </div>
+    </div>
 <div>
     <div>
         <div class="input__wrapper">
-            <form id="searchForm">
+            <form id="searchForm" onsubmit="handle(event)">
             <input type="text" placeholder="Search For Movies">
-            <button class="search-btn" onclick="searchMovies()">
+            <button class="search__btn">
+                <div class="magnifying__glass">
                 <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
-                </button>
+            </div>
+            </button>
                 </form>
         </div>
     </div>
 </div>
-<img class="movie__night-img" src="./undraw_horror_movie_3988 (1).svg" alt="">
-
 </div>
 </header>
+</section>
+
+<section id="results">
+    <div class="container">
+        <div class="row">
+            <div class="filter__container">
+                <select id="filter">
+                    <option value="" disabled="" selected="">Sort</option>
+                    <option value="GENRE">Genre</option>
+                    <option value="YEAR">Year</option>
+                    <option value="RATING">Rating</option>
+                    <option value="DIRECTOR">Director</option>
+                </select>
+            </div>  
+        <div class="container">
+            <div class="row">
+                <div class="movie-list">
+                    <div class="movie">
+                        <div class="movie__post">
+                            <div class="movie__post--container">
+        <figure>
+            <img class="movie__img" src=${movie.image}>
+        </figure>
+          <h3>${movie.title}</h3>
+            <p><b>Release:</b> ${movie.year}</p>
+            <p><b>Genre:</b>${movie.genre}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 </section>
 </body>
 </html>
