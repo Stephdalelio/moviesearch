@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movies</title>
+    <script src="https://kit.fontawesome.com/bcaf3872d3.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="nav__container">
+        <div class="nav__left">
+          <a href="/">
+            <div class="nav__logo">
+              <h1 class="nav__logo--h1">
+                Movie<span class="red">Night</span>
+              </h1>
+            </div>
+          </a>
+        </div>
+        <ul class="nav__links">
+          <li class="nav__list">
+            <a href="/" class="nav__link"> Home </a>
+          </li>
+          <li class="nav__list">
+            <a href="/movie.html" class="nav__link"> Movies </a>
+          </li>
+          <li class="nav__list">
+            <a class="nav__link nav__link--contact" onclick="showAlert()"> Contact </a>
+          </li>
+        </ul>
+        <button class="btn__menu" onclick="openMenu()">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="menu__backdrop">
+          <button class="btn__menu btn__menu--close" onclick="closeMenu()">
+            <i class="fas fa-times"></i>
+          </button>
+          <ul class="menu__links">
+            <li class="menu__list">
+              <a href="/" class="menu__link" onclick="closeMenu()">Home</a>
+            </li>
+            <li class="menu__list">
+              <a href="/movie.html" class="menu__link" onclick="closeMenu()"
+                >Movies</a
+              >
+            </li>
+            <li class="menu__list">
+              <a class="menu__link nav__link--contact" onclick="showAlert()"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <section id="movies">
+      <div class="row">
+        <div class="container movie__container">
+          <div class="browser__engine">
+            <input
+              class="search__line"
+              type="text"
+              placeholder="Ex: Fast & Furious"
+              onchange="onSearchChange(event)"
+            />
+            <button class="api-button" name="movieName">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+
+          <div class="filter__wrapper">
+            <h2 class="filter__heading">
+              Movie<span class="red">Night</span>
+            </h2>
+            <select id="filter" onchange="filterMovies(event)">
+              <option value="" disabled selected>Sort</option>
+              <option value="NEW_TO_OLD">Year, New to Old</option>
+              <option value="OLD_TO_NEW">Year, Old to New</option>
+            </select>
+          </div>
+          <div class="not__found--wrapper">
+            <!-- <h1 class="not__found--error">{} was not found.</h1> -->
+          </div>
+          <div class="movie__list">
+            <!-- <div class="movie">
+              <figure class="movie__img--wrapper">
+                <img src="/assets/Avatar.jpg" alt="" class="movie__img" />
+              </figure>
+              <div class="movie__description">
+                <p class="movie__title">Title</p>
+                <p class="media__type">Type</p>
+                <p class="movie__year">Year</p>
+              </div>
+            </div> -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="footer__wrap">
+        <div class="nav__left">
+          <div class="nav__logo">
+            <h1 class="nav__logo--h1">
+              Movie<span class="red">Night</span>
+            </h1>
+          </div>
+        </div>
+        <p class="footer__p">© 2024 Stephanie D'Alelio </p>
+        <div class="footer__socials">
+          <a
+            href="https://www.facebook.com/"
+            target="_blank"
+            class="footer__social--wrap"
+            ><i class="fa-brands fa-facebook"></i
+          ></a>
+          <a
+            href="https://twitter.com/"
+            target="_blank"
+            class="footer__social--wrap"
+            ><i class="fa-brands fa-x-twitter"></i
+          ></a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            class="footer__social--wrap"
+            ><i class="fa-brands fa-github"></i
+          ></a>
+        </div>
+      </div>
+    </footer>
+  </body>
+  <script src="index.js"></script>
+  <script src="search.js"></script>
+</html>
